@@ -182,7 +182,7 @@
   .hero-b .h-stats{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
   .hero-b .b-visual{position:relative;padding:10px 0 30px}
   .hero-b .b-cover{width:300px;margin:0 auto;border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:0 8px 0 rgba(45,27,16,.35)}
-  .hero-b .b-cover img{width:100%;height:300px;object-fit:cover}
+  .hero-b .b-cover img{width:100%;aspect-ratio:1/1;object-fit:cover}
   .hero-b .chip-card{background:var(--surface);border:3px solid var(--ink);border-radius:14px;box-shadow:0 4px 0 rgba(45,27,16,.3);padding:10px 14px;font-size:12.5px;font-weight:800;display:inline-flex;align-items:center;gap:8px;margin-top:14px}
   .hero-b .chip-1 .dot{width:12px;height:12px;border-radius:50%;background:var(--lime);border:2px solid var(--ink)}
   .hero-b .chip-2 .stars{color:var(--sunset);letter-spacing:1px}
@@ -224,20 +224,20 @@
   .w-carousel::-webkit-scrollbar{height:8px}
   .w-carousel::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:99px}
   .w-card{flex:0 0 216px;background:#fff;border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 rgba(45,27,16,.3)}
-  .w-card .w-img{height:180px;overflow:hidden;border-radius:15px 15px 0 0}
+  .w-card .w-img{aspect-ratio:1/1;overflow:hidden;border-radius:15px 15px 0 0}
   .w-card .w-img img{width:100%;height:100%;object-fit:cover}
   .w-card .w-body{padding:12px 14px}
   .w-card h3{font-family:var(--font-head);font-weight:800;font-size:15px}
   .w-card p{font-size:12px;color:var(--muted);margin-top:4px}
-  .w-bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:118px;gap:14px;margin-top:34px}
-  .w-bento .tile{border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 rgba(45,27,16,.3);overflow:hidden;position:relative}
+  .w-bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:34px}
+  .w-bento .tile{border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 rgba(45,27,16,.3);overflow:hidden;position:relative;aspect-ratio:1/1}
   .w-bento .tile img{width:100%;height:100%;object-fit:cover}
   .w-bento .tile .tlabel{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);border:2px solid var(--ink);border-radius:9px;padding:3px 10px;font-size:11.5px;font-weight:800}
-  .w-bento .big{grid-column:span 3;grid-row:span 2}
-  .w-bento .med{grid-column:span 3}
+  .w-bento .big{grid-column:span 3}
+  .w-bento .med{grid-column:span 2}
   .w-bento .small{grid-column:span 2}
   .w-bento .more{background:var(--sunset-soft);border-color:var(--sunset);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:15px;color:var(--sunset-dark)}
-  @media (max-width:760px){.w-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:96px}.w-bento .big{grid-column:span 2;grid-row:span 2}.w-bento .med,.w-bento .small{grid-column:span 1}}
+  @media (max-width:760px){.w-bento{grid-template-columns:repeat(2,1fr)}.w-bento .big{grid-column:span 2}.w-bento .med,.w-bento .small{grid-column:span 1}}
   .w-path{max-width:560px;margin:36px auto 0;display:flex;flex-direction:column}
   .w-path .node{display:flex;align-items:center;gap:16px}
   .w-path .node .nd{flex:0 0 52px;height:52px;border-radius:50%;border:3px solid var(--ink);box-shadow:0 4px 0 rgba(45,27,16,.3);overflow:hidden;position:relative}
@@ -282,7 +282,7 @@
   .slideshow{position:relative;border:3px solid var(--ink);border-radius:22px;box-shadow:0 6px 0 rgba(45,27,16,.35);overflow:hidden}
   .slide-track{display:flex;transition:transform .55s cubic-bezier(.4,.1,.2,1)}
   .j-slide{flex:0 0 100%}
-  .j-slide img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+  .j-slide img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
   .slide-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:3px solid var(--ink);background:var(--surface);color:var(--ink);font-size:20px;font-weight:800;cursor:pointer;box-shadow:0 3px 0 rgba(45,27,16,.3);z-index:5;display:flex;align-items:center;justify-content:center}
   .slide-arrow.prev{left:14px}
   .slide-arrow.next{right:14px}
