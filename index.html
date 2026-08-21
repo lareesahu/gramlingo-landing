@@ -192,30 +192,51 @@
   .w-card h3{font-family:var(--font-head);font-weight:800;font-size:15px}
   .w-card p{font-size:12px;color:var(--muted);margin-top:4px}
 
-  /* ── Word Power: game mock ── */
-  .game-mock{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin-left:auto;margin-right:auto}
-  .gm-card{background:var(--surface);border:3px solid var(--ink);border-radius:20px;box-shadow:0 4px 0 rgba(45,27,16,.3);overflow:hidden}
-  .gm-question{padding:20px 22px 14px}
-  .gm-question .gm-label{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sunset-dark);margin-bottom:8px}
-  .gm-question .gm-q{font-family:var(--font-head);font-weight:700;font-size:17px;line-height:1.3}
-  .gm-options{padding:0 22px 20px}
-  .gm-opt{border:2.5px solid var(--border-strong);background:var(--bg);border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:10px}
-  .gm-opt .gm-radio{width:20px;height:20px;border-radius:50%;border:2.5px solid var(--border-strong);flex-shrink:0}
-  .gm-opt.correct{border-color:var(--lime-dark);background:var(--lime-soft)}
-  .gm-opt.correct .gm-radio{background:var(--lime);border-color:var(--lime-dark)}
-  .gm-opt.correct .gm-radio::after{content:'✓';color:var(--ink);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;height:100%}
-  .gm-opt.wrong{border-color:#d44;color:#a33;opacity:.6}
-  .gm-opt.wrong .gm-radio::after{content:'✗';color:#a33;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;height:100%}
-  .gm-feedback{padding:14px 22px 20px;border-top:2px solid var(--border);background:var(--lime-soft)}
-  .gm-feedback .gm-fb-label{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--lime-dark);margin-bottom:4px}
-  .gm-feedback .gm-fb-text{font-size:13.5px;color:#4a3320;line-height:1.5}
-  .gm-wrong-book{padding:20px 22px;border-top:2px solid var(--border)}
-  .gm-wrong-book .gm-wb-label{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--sunset-dark);margin-bottom:8px}
-  .gm-wrong-book .gm-wb-list{display:flex;flex-direction:column;gap:8px}
-  .gm-wb-item{display:flex;align-items:center;gap:10px;font-size:13px}
-  .gm-wb-item .gm-wb-dot{width:8px;height:8px;border-radius:50%;background:var(--sunset);flex-shrink:0}
-  .gm-wb-item .gm-wb-word{font-weight:700}
-  .gm-wb-item .gm-wb-note{color:var(--muted);font-size:12px}
+  /* ── How it feels: faithful replica of the actual app (tokens mirror src/styles/tokens.css) ── */
+  .game-mock{margin-top:34px;display:grid;grid-template-columns:1.12fr 1fr;gap:22px;max-width:820px;margin-left:auto;margin-right:auto;align-items:start}
+  .gm-screen{background:var(--surface);border:2px solid #f0e5d8;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(45,27,16,.09)}
+  .gm-app{padding:18px 20px 20px}
+  .gm-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+  .gm-phase{font-size:13px;font-weight:600;color:#5c3d2e}
+  .gm-count{font-size:12px;color:#8c7b6e;font-family:ui-monospace,Consolas,monospace;white-space:nowrap}
+  .gm-track{height:8px;border-radius:99px;background:#f0e5d8;overflow:hidden;margin-bottom:12px}
+  .gm-fill{height:100%;width:28%;border-radius:99px;background:var(--sunset)}
+  .gm-gramlin{display:flex;justify-content:center;margin-bottom:6px}
+  .gm-gramlin img{height:78px;width:auto}
+  .gm-q{font-size:17px;font-weight:500;line-height:1.5;color:var(--ink);margin-bottom:14px}
+  .gm-opts{display:flex;flex-direction:column;gap:8px}
+  .gm-opt{display:flex;align-items:center;gap:12px;padding:11px 14px;border:2px solid #f0e5d8;border-radius:12px;background:#fffaf6;font-size:14.5px;font-weight:500;color:var(--ink)}
+  .gm-letter{width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:2px solid #e8d5c4;border-radius:8px;font-weight:800;font-size:13px;color:#5c3d2e;background:var(--surface)}
+  .gm-opt--correct{border-color:#4caf50;background:#e8f5e9}
+  .gm-opt--correct .gm-letter{border-color:#4caf50;background:#4caf50;color:#fff}
+  .gm-opt--wrong{border-color:#e07070;background:#fce4e4}
+  .gm-opt--wrong .gm-letter{border-color:#e07070;background:#e07070;color:#fff}
+  .gm-opt--dim{opacity:.5}
+  .gm-feedback{margin-top:12px;border-radius:12px;background:#e8f5e9;padding:12px 14px}
+  .gm-feedback--wrong{background:#fce4e4}
+  .gm-fb-label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#2e7d32;margin-bottom:4px}
+  .gm-feedback--wrong .gm-fb-label{color:#b91c1c}
+  .gm-fb-text{font-size:13.5px;line-height:1.55;color:#4a3320}
+  .gm-actions{margin-top:14px;display:flex;justify-content:flex-end}
+  .gm-next{background:var(--sunset);color:#fff;font-family:var(--font-body);font-weight:800;font-size:15px;padding:11px 22px;border-radius:12px;box-shadow:0 3px 0 rgba(224,106,31,.45)}
+  /* wrong-book screen (mirrors ErrorLogScreen) */
+  .gm-wb-head{display:flex;align-items:center;gap:12px;padding:16px 20px 6px}
+  .gm-wb-head img{height:54px;width:auto}
+  .gm-wb-title{font-family:var(--font-head);font-weight:800;font-size:18px}
+  .gm-wb-sub{font-size:12.5px;color:var(--muted)}
+  .gm-wb-entries{padding:10px 20px 6px;display:flex;flex-direction:column;gap:12px}
+  .gm-wb-entry{border:2px solid #f0e5d8;border-radius:12px;padding:12px 14px;background:#fffaf6}
+  .gm-wb-meta{display:flex;gap:10px;align-items:center;font-size:11.5px;color:#8c7b6e;margin-bottom:8px}
+  .gm-wb-meta .gm-wb-phase{font-weight:700;color:#5c3d2e}
+  .gm-wb-q{background:var(--surface);border:1px solid #f0e5d8;border-radius:8px;padding:8px 10px;font-size:13px;color:var(--ink);margin-bottom:8px}
+  .gm-wb-ans{font-size:12.5px;padding:6px 10px;border-radius:8px;margin-bottom:6px}
+  .gm-wb-ans .lbl{font-weight:800;margin-right:6px}
+  .gm-wb-ans--user{background:#fef2f2;border:1px solid #fecaca;color:#7f1d1d}
+  .gm-wb-ans--user .lbl{color:#b91c1c}
+  .gm-wb-ans--correct{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+  .gm-wb-ans--correct .lbl{color:#15803d}
+  .gm-retry{display:inline-block;margin-top:4px;border:2px solid var(--sunset);background:var(--surface);color:var(--sunset-dark);font-weight:800;font-size:12.5px;padding:5px 14px;border-radius:99px}
+  .gm-wb-note{margin:8px 20px 18px;font-size:12.5px;color:#5c3d2e;line-height:1.55;background:var(--sunset-soft);border-radius:10px;padding:10px 14px}
   @media (max-width:640px){.game-mock{grid-template-columns:1fr}}
 
   /* ── Why section ── */
@@ -416,47 +437,63 @@
   </div>
 </section>
 
-<!-- WORD POWER: game mock -->
+<!-- HOW IT FEELS: faithful replica of the actual app (real question clauses_subj_q01 from game-data.json) -->
 <section id="sec-word" class="section-pad">
   <div class="sec-head">
     <span class="eyebrow" data-i18n="eyebrowWord">How it feels</span>
     <h2 data-i18n="wordTitle">See it in action</h2>
-    <p data-i18n="wordSub">Real questions, real feedback, real learning — this is what playing GramLingo actually looks like.</p>
+    <p data-i18n="wordSub">Straight from the game — a real question, real feedback, and where your mistakes go next.</p>
   </div>
   <div class="game-mock">
-    <div class="gm-card">
-      <div class="gm-question">
-        <div class="gm-label" data-i18n="gmLabel">Verb Tenses · Phase 3</div>
-        <div class="gm-q" data-i18n="gmQ">She ___ to the library every Saturday.</div>
-      </div>
-      <div class="gm-options">
-        <div class="gm-opt"><div class="gm-radio"></div><span>is going</span></div>
-        <div class="gm-opt correct"><div class="gm-radio"></div><span>goes</span></div>
-        <div class="gm-opt wrong"><div class="gm-radio"></div><span>gone</span></div>
-        <div class="gm-opt"><div class="gm-radio"></div><span>going</span></div>
-      </div>
-      <div class="gm-feedback">
-        <div class="gm-fb-label" data-i18n="gmFbLabel">Why "goes" is correct</div>
-        <div class="gm-fb-text" data-i18n="gmFbText">"Every Saturday" signals a habit — a repeated action in the present. Use the simple present tense: she goes. "Is going" means happening right now, not a routine.</div>
+    <!-- Lesson screen replica -->
+    <div class="gm-screen">
+      <div class="gm-app">
+        <div class="gm-header">
+          <span class="gm-phase" data-i18n="gmPhase">Phase 2: Subject Relatives</span>
+          <span class="gm-count" data-i18n="gmCount">Question 2 of 7</span>
+        </div>
+        <div class="gm-track" role="presentation"><div class="gm-fill"></div></div>
+        <div class="gm-gramlin"><img src="think-gramlin.webp" width="128" height="128" alt="Gramlin the mascot, thinking" loading="lazy" /></div>
+        <p class="gm-q" data-i18n="gmQ">The woman ___ called me is my manager.</p>
+        <div class="gm-opts">
+          <div class="gm-opt gm-opt--correct"><span class="gm-letter">A</span><span>who</span></div>
+          <div class="gm-opt gm-opt--wrong"><span class="gm-letter">B</span><span>which</span></div>
+          <div class="gm-opt gm-opt--dim"><span class="gm-letter">C</span><span>where</span></div>
+          <div class="gm-opt gm-opt--dim"><span class="gm-letter">D</span><span>whom</span></div>
+        </div>
+        <div class="gm-feedback gm-feedback--wrong">
+          <div class="gm-fb-label" data-i18n="gmFbLabel">Your answer — B ✗</div>
+          <div class="gm-fb-text" data-i18n="gmFbText">“which” is for things, not people. The woman is a person acting as the subject, so “who” is correct. Tap any option to see its own explanation.</div>
+        </div>
+        <div class="gm-actions"><span class="gm-next" data-i18n="gmNext">Next →</span></div>
       </div>
     </div>
-    <div class="gm-card">
-      <div class="gm-question">
-        <div class="gm-label" data-i18n="gmWbLabel">Your Wrong-Book</div>
-        <div class="gm-q" data-i18n="gmWbTitle">Auto-built from your mistakes</div>
-      </div>
-      <div class="gm-wrong-book">
-        <div class="gm-wb-label" data-i18n="gmWbListLabel">Recently missed</div>
-        <div class="gm-wb-list">
-          <div class="gm-wb-item"><div class="gm-wb-dot"></div><span class="gm-wb-word">gone vs. goes</span><span class="gm-wb-note" data-i18n="gmWb1">past participle ≠ simple present</span></div>
-          <div class="gm-wb-item"><div class="gm-wb-dot"></div><span class="gm-wb-word">who vs. which</span><span class="gm-wb-note" data-i18n="gmWb2">people → who, things → which</span></div>
-          <div class="gm-wb-item"><div class="gm-wb-dot"></div><span class="gm-wb-word">would have vs. had</span><span class="gm-wb-note" data-i18n="gmWb3">third conditional needs past perfect</span></div>
+    <!-- Wrong-book replica (mirrors the app's Error Log) -->
+    <div class="gm-screen">
+      <div class="gm-wb-head">
+        <img src="study-gramlin.webp" width="96" height="96" alt="Gramlin the mascot, studying" loading="lazy" />
+        <div>
+          <div class="gm-wb-title" data-i18n="gmWbTitle">Your Wrong-Book</div>
+          <div class="gm-wb-sub" data-i18n="gmWbSub">Auto-built from every mistake</div>
         </div>
       </div>
-      <div class="gm-feedback" style="background:var(--sunset-soft)">
-        <div class="gm-fb-label" style="color:var(--sunset-dark)" data-i18n="gmWbFbLabel">Smart review</div>
-        <div class="gm-fb-text" data-i18n="gmWbFbText">The wrong-book resurfaces these at spaced intervals — right when you're about to forget. No flashcard cramming needed.</div>
+      <div class="gm-wb-entries">
+        <div class="gm-wb-entry">
+          <div class="gm-wb-meta"><span class="gm-wb-phase">Relative Clauses · Phase 2</span><span>#2</span></div>
+          <div class="gm-wb-q">The woman ___ called me is my manager.</div>
+          <div class="gm-wb-ans gm-wb-ans--user"><span class="lbl" data-i18n="gmYour">Your answer</span> which</div>
+          <div class="gm-wb-ans gm-wb-ans--correct"><span class="lbl" data-i18n="gmCorrect">Correct</span> who</div>
+          <span class="gm-retry" data-i18n="gmRetry">↻ Retry this phase</span>
+        </div>
+        <div class="gm-wb-entry">
+          <div class="gm-wb-meta"><span class="gm-wb-phase">Relative Clauses · Phase 5</span><span>#4</span></div>
+          <div class="gm-wb-q">The train ___ arrives at 3 PM is delayed.</div>
+          <div class="gm-wb-ans gm-wb-ans--user"><span class="lbl" data-i18n="gmYour">Your answer</span> when</div>
+          <div class="gm-wb-ans gm-wb-ans--correct"><span class="lbl" data-i18n="gmCorrect">Correct</span> that</div>
+          <span class="gm-retry" data-i18n="gmRetry">↻ Retry this phase</span>
+        </div>
       </div>
+      <div class="gm-wb-note" data-i18n="gmWbNote">Every miss lands here automatically — grouped by phase, one tap to retry, exportable as PDF or Markdown.</div>
     </div>
   </div>
 </section>
@@ -604,19 +641,19 @@ const L10N = {
   wAdvD:{en:'idioms that impress',zh:'让人眼前一亮的习语',es:'modismos que impresionan'},
   eyebrowWord:{en:'How it feels',zh:'实际体验',es:'Cómo se siente'},
   wordTitle:{en:'See it in action',zh:'看看实际效果',es:'Véelo en acción'},
-  wordSub:{en:'Real questions, real feedback, real learning — this is what playing GramLingo actually looks like.',zh:'真实的题目、真实的反馈、真实的学习——这就是玩 GramLingo 的实际体验。',es:'Preguntas reales, feedback real, aprendizaje real — así es jugar GramLingo.'},
-  gmLabel:{en:'Verb Tenses · Phase 3',zh:'动词时态 · 第 3 关',es:'Tiempos verbales · Fase 3'},
-  gmQ:{en:'She ___ to the library every Saturday.',zh:'她每个星期六 ___ 去图书馆。',es:'Ella ___ a la biblioteca cada sábado.'},
-  gmFbLabel:{en:'Why "goes" is correct',zh:'为什么 "goes" 是对的',es:'Por qué "goes" es correcto'},
-  gmFbText:{en:'"Every Saturday" signals a habit — a repeated action in the present. Use the simple present tense: she goes. "Is going" means happening right now, not a routine.',zh:'"每个星期六"表示习惯——现在反复发生的动作。用一般现在时：she goes。"is going" 表示正在发生，不是常规。',es:'"Cada sábado" indica un hábito — una acción repetida en el presente. Usa el presente simple: she goes. "Is going" significa ahora mismo, no rutina.'},
-  gmWbLabel:{en:'Your Wrong-Book',zh:'你的错题本',es:'Tu libro de errores'},
-  gmWbTitle:{en:'Auto-built from your mistakes',zh:'从你的错误中自动生成',es:'Creado automáticamente de tus errores'},
-  gmWbListLabel:{en:'Recently missed',zh:'最近错题',es:'Recién fallados'},
-  gmWb1:{en:'past participle ≠ simple present',zh:'过去分词 ≠ 一般现在时',es:'participio ≠ presente simple'},
-  gmWb2:{en:'people → who, things → which',zh:'人 → who，物 → which',es:'personas → who, cosas → which'},
-  gmWb3:{en:'third conditional needs past perfect',zh:'第三条件句需要过去完成时',es:'tercer condicional necesita pasado perfecto'},
-  gmWbFbLabel:{en:'Smart review',zh:'智能复习',es:'Repaso inteligente'},
-  gmWbFbText:{en:'The wrong-book resurfaces these at spaced intervals — right when you\'re about to forget. No flashcard cramming needed.',zh:'错题本会在你快要遗忘时，按间隔重复出现——不需要死记硬背。',es:'El libro de errores reaparece a intervalos — justo cuando vas a olvidar. Sin memorización forzada.'},
+  wordSub:{en:'Straight from the game — a real question, real feedback, and where your mistakes go next.',zh:'直接来自游戏——真实题目、真实反馈、以及错题的去向。',es:'Directo del juego — una pregunta real, feedback real y a dónde van tus errores.'},
+  gmPhase:{en:'Phase 2: Subject Relatives',zh:'第 2 关：主语关系代词',es:'Fase 2: Relativos de sujeto'},
+  gmCount:{en:'Question 2 of 7',zh:'问题 2 / 7',es:'Pregunta 2 de 7'},
+  gmQ:{en:'The woman ___ called me is my manager.',zh:'The woman ___ called me is my manager.',es:'The woman ___ called me is my manager.'},
+  gmFbLabel:{en:'Your answer — B ✗',zh:'你的答案 — B ✗',es:'Tu respuesta — B ✗'},
+  gmFbText:{en:'“which” is for things, not people. The woman is a person acting as the subject, so “who” is correct. Tap any option to see its own explanation.',zh:'“which” 用于指物，不指人。这位女士是“人”且作主语，所以要用 “who”。点击任意选项可查看该选项的解析。',es:'“which” es para cosas, no personas. La mujer es una persona y sujeto, así que “who” es correcto. Toca cualquier opción para ver su explicación.'},
+  gmNext:{en:'Next →',zh:'下一题 →',es:'Siguiente →'},
+  gmWbTitle:{en:'Your Wrong-Book',zh:'你的错题本',es:'Tu libro de errores'},
+  gmWbSub:{en:'Auto-built from every mistake',zh:'从每个错误自动生成',es:'Creado de cada error'},
+  gmYour:{en:'Your answer',zh:'你的答案',es:'Tu respuesta'},
+  gmCorrect:{en:'Correct',zh:'正确答案',es:'Correcta'},
+  gmRetry:{en:'↻ Retry this phase',zh:'↻ 重玩本关',es:'↻ Reintentar fase'},
+  gmWbNote:{en:'Every miss lands here automatically — grouped by phase, one tap to retry, exportable as PDF or Markdown.',zh:'每个错题都会自动进入这里——按关卡分组，一键重玩，可导出 PDF 或 Markdown。',es:'Cada error llega aquí automáticamente — agrupado por fase, un toque para reintentar, exportable a PDF o Markdown.'},
   eyebrowWhy:{en:'Different',zh:'不一样',es:'Diferente'},
   whyTitle:{en:'Why GramLingo',zh:'为什么是 GramLingo',es:'Por qué GramLingo'},
   whySub:{en:'Most grammar tools test you. GramLingo plays with you.',zh:'大多数语法工具都在考你，GramLingo 陪你玩。',es:'La mayoría te examina. GramLingo juega contigo.'},
