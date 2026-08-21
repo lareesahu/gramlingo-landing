@@ -6,9 +6,14 @@
 <title>GramLingo — Learn by Playing. Remember Forever.</title>
 <meta name="description" content="The grammar game that actually sticks. 12 grammar worlds, 92 phases — no tests, no drills, just play. EN · 中文 · Español" />
 <meta name="theme-color" content="#ff8c42" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/baloo2-latin.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/dmsans-latin.woff2" />
 <link rel="canonical" href="https://gramlingo.online/" />
+<link rel="alternate" hreflang="en" href="https://gramlingo.online/" />
+<link rel="alternate" hreflang="zh-CN" href="https://gramlingo.online/?lang=zh" />
+<link rel="alternate" hreflang="es" href="https://gramlingo.online/?lang=es" />
+<link rel="alternate" hreflang="x-default" href="https://gramlingo.online/" />
 <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 <script type="application/ld+json">
 {
@@ -47,12 +52,20 @@
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="gramlingo-logo.webp" />
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="GramLingo" />
 <meta property="og:title" content="GramLingo — Learn by Playing. Remember Forever." />
 <meta property="og:description" content="The grammar game that actually sticks. 12 worlds, 92 phases, no placement tests — EN · 中文 · Español." />
 <meta property="og:image" content="https://gramlingo.online/poster-1.jpg" />
-<meta property="og:url" content="https://gramlingo.online" />
+<meta property="og:image:alt" content="GramLingo — grammar quest game with 12 worlds" />
+<meta property="og:url" content="https://gramlingo.online/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="es_ES" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://gramlingo.online/poster-1.jpg" />
+<meta name="twitter:site" content="@gramlingo" />
 <style>
   @font-face{font-family:'Baloo 2';font-style:normal;font-weight:600 800;font-display:swap;src:url('fonts/baloo2-latin.woff2') format('woff2')}
   @font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/dmsans-latin.woff2') format('woff2')}
@@ -65,6 +78,8 @@
     --font-body:'DM Sans','Segoe UI',system-ui,-apple-system,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:999;background:var(--ink);color:#fff;padding:10px 20px;border-radius:0 0 10px 10px;font-weight:700;font-size:14px;text-decoration:none}
+  .skip-link:focus{left:0}
   a,button,.option,.stat-pill,.w-card{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:3px solid var(--sunset);outline-offset:3px;border-radius:8px}
   html{scroll-behavior:smooth}
@@ -414,6 +429,7 @@
 </style>
 </head>
 <body class="lang-en card-clay hero-b order-a world-b word-a">
+<a href="#sec-journey" class="skip-link" data-i18n="skipLink">Skip to content</a>
 <div id="mockPage">
 
     <nav class="m-nav" aria-label="Main">
@@ -428,12 +444,12 @@
         </div>
         <div class="m-nav-right">
           <div class="lang-switch" role="group" aria-label="Language">
-            <button data-lang="en">EN</button>
-            <button data-lang="zh">中文</button>
-            <button data-lang="es">ES</button>
+            <button aria-pressed="false" data-lang="en">EN</button>
+            <button aria-pressed="false" data-lang="zh">中文</button>
+            <button aria-pressed="false" data-lang="es">ES</button>
           </div>
-          <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
-          <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+          <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
+          <button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('mLinks');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))"><span></span><span></span><span></span></button>
         </div>
       </div>
     </nav>
@@ -446,7 +462,7 @@
         <h1 data-i18n="heroHeadlineA">Learn by playing. Remember forever.</h1>
         <p class="h-sub" data-i18n="heroSubA">Wrong answers never punish you — they become your personal review book.</p>
         <div class="h-ctas">
-          <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
+          <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
           <a class="btn-clay btn-ghost" href="#sec-how" data-i18n="ctaSee">See how it works</a>
         </div>
         <div class="h-stats">
@@ -454,7 +470,7 @@
           <span class="stat-pill" data-i18n="statPhases">92 phases</span>
           <span class="stat-pill" data-i18n="statZero">zero tests</span>
         </div>
-        <div class="mascot"><img src="happy-gramlin.webp" width="300" height="300" alt="Gramlin" loading="lazy" </div />
+        <div class="mascot"><img src="happy-gramlin.webp" width="300" height="300" alt="Gramlin" loading="lazy" /></div>
       </section>
 
       <!-- HERO B -->
@@ -465,7 +481,7 @@
             <h1 data-i18n="heroHeadlineB">Learn by playing. Remember forever.</h1>
             <p class="h-sub" data-i18n="heroSubB">Wrong answers never punish you — they become your personal review book.</p>
             <div class="h-ctas">
-              <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
+              <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
               <a class="btn-clay btn-ghost" href="#sec-how" data-i18n="ctaSee">See how it works</a>
             </div>
             <div class="h-stats">
@@ -475,7 +491,7 @@
             </div>
           </div>
           <div class="b-visual">
-            <div class="b-cover"><img src="cover-tenses.jpg" fetchpriority="high" width="512" height="512" alt="Verb Tenses world" loading="lazy" </div />
+            <div class="b-cover"><img src="cover-tenses.jpg" fetchpriority="high" width="512" height="512" alt="Verb Tenses world" loading="lazy" /></div>
             <div class="chip-card chip-1"><span class="dot"></span><span data-i18n="chipWrongBook">Wrong answers become your review</span></div>
             <div class="chip-card chip-2"><span class="stars">★★★</span><span data-i18n="chipStars">Phase unlocked — keep going!</span></div>
           </div>
@@ -488,9 +504,9 @@
         <div class="c-top">
           <div class="c-logo"><img src="gramlingo-logo.webp" alt="GramLingo" width="800" height="221" /><span data-i18n="brand">GramLingo</span></div>
           <div class="lang-switch" role="group" aria-label="Language">
-            <button data-lang="en">EN</button>
-            <button data-lang="zh">中文</button>
-            <button data-lang="es">ES</button>
+            <button aria-pressed="false" data-lang="en">EN</button>
+            <button aria-pressed="false" data-lang="zh">中文</button>
+            <button aria-pressed="false" data-lang="es">ES</button>
           </div>
         </div>
         <div class="c-glass">
@@ -498,7 +514,7 @@
           <h1 data-i18n="heroHeadlineC">Learn by playing. Remember forever.</h1>
           <p class="h-sub" data-i18n="heroSubC">Wrong answers never punish you — they become your personal review book.</p>
           <div class="c-ctas">
-            <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
+            <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
             <a class="btn-clay btn-ghost" href="#sec-how" data-i18n="ctaSee">See how it works</a>
           </div>
           <div class="c-stats">
@@ -537,13 +553,13 @@
           <span class="eyebrow" data-i18n="eyebrowHow">3 steps</span>
           <h2 data-i18n="howTitle">How it works</h2>
           <p data-i18n="howSub">No syllabus, no drills — just a quest from confused to confident.</p>
-          <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
+          <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
         </div>
         <div class="split-visual">
           <div class="step-list">
             <div class="card step-row">
               <div class="sr-num">1</div>
-              <div class="pose"><img src="think-gramlin.webp" width="300" height="300" alt="Gramlin thinking" loading="lazy" </div />
+              <div class="pose"><img src="think-gramlin.webp" width="300" height="300" alt="Gramlin thinking" loading="lazy" /></div>
               <div>
                 <h3 data-i18n="step1T">Pick a world</h3>
                 <p data-i18n="step1D">Choose from 12 grammar worlds — clauses, tenses, conditionals and more.</p>
@@ -551,7 +567,7 @@
             </div>
             <div class="card step-row">
               <div class="sr-num">2</div>
-              <div class="pose"><img src="study-gramlin.webp" width="300" height="300" alt="Gramlin studying" loading="lazy" </div />
+              <div class="pose"><img src="study-gramlin.webp" width="300" height="300" alt="Gramlin studying" loading="lazy" /></div>
               <div>
                 <h3 data-i18n="step2T">Play &amp; learn</h3>
                 <p data-i18n="step2D">Instant feedback with clear explanations — every option teaches you why.</p>
@@ -559,7 +575,7 @@
             </div>
             <div class="card step-row">
               <div class="sr-num">3</div>
-              <div class="pose"><img src="celebrate-gramlin.webp" width="300" height="300" alt="Gramlin celebrating" loading="lazy" </div />
+              <div class="pose"><img src="celebrate-gramlin.webp" width="300" height="300" alt="Gramlin celebrating" loading="lazy" /></div>
               <div>
                 <h3 data-i18n="step3T">Level up</h3>
                 <p data-i18n="step3D">Earn stars, unlock phases, and let your wrong-book build your review.</p>
@@ -579,35 +595,35 @@
 
         <div class="world-v world-a">
           <div class="w-carousel">
-            <div class="w-card"><div class="w-img"><img src="cover-clauses.jpg" width="832" height="832" alt="Relative Clauses" loading="lazy" </div /><div class="w-body"><h3 data-i18n="wClauses">Relative Clauses</h3><p data-i18n="wClausesD">who · which · that</p></div></div>
-            <div class="w-card"><div class="w-img"><img src="cover-tenses.jpg" width="512" height="512" alt="Verb Tenses" loading="lazy" </div /><div class="w-body"><h3 data-i18n="wTenses">Verb Tenses</h3><p data-i18n="wTensesD">past · present · future</p></div></div>
-            <div class="w-card"><div class="w-img"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" </div /><div class="w-body"><h3 data-i18n="wCond">Conditionals</h3><p data-i18n="wCondD">if · would · could</p></div></div>
-            <div class="w-card"><div class="w-img"><img src="cover-passive.jpg" width="832" height="832" alt="Passive Voice" loading="lazy" </div /><div class="w-body"><h3 data-i18n="wPassive">Passive Voice</h3><p data-i18n="wPassiveD">is done · was made</p></div></div>
-            <div class="w-card"><div class="w-img"><img src="cover-modals.jpg" width="512" height="512" alt="Modals" loading="lazy" </div /><div class="w-body"><h3 data-i18n="wModals">Modals</h3><p data-i18n="wModalsD">can · must · might</p></div></div>
-            <div class="w-card"><div class="w-img"><img src="cover-advanced.jpg" width="512" height="512" alt="Advanced Expressions" loading="lazy" </div /><div class="w-body"><h3 data-i18n="wAdv">Advanced Expressions</h3><p data-i18n="wAdvD">idioms that impress</p></div></div>
+            <div class="w-card"><div class="w-img"><img src="cover-clauses.jpg" width="832" height="832" alt="Relative Clauses" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wClauses">Relative Clauses</h3><p data-i18n="wClausesD">who · which · that</p></div></div>
+            <div class="w-card"><div class="w-img"><img src="cover-tenses.jpg" width="512" height="512" alt="Verb Tenses" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wTenses">Verb Tenses</h3><p data-i18n="wTensesD">past · present · future</p></div></div>
+            <div class="w-card"><div class="w-img"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wCond">Conditionals</h3><p data-i18n="wCondD">if · would · could</p></div></div>
+            <div class="w-card"><div class="w-img"><img src="cover-passive.jpg" width="832" height="832" alt="Passive Voice" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wPassive">Passive Voice</h3><p data-i18n="wPassiveD">is done · was made</p></div></div>
+            <div class="w-card"><div class="w-img"><img src="cover-modals.jpg" width="512" height="512" alt="Modals" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wModals">Modals</h3><p data-i18n="wModalsD">can · must · might</p></div></div>
+            <div class="w-card"><div class="w-img"><img src="cover-advanced.jpg" width="512" height="512" alt="Advanced Expressions" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wAdv">Advanced Expressions</h3><p data-i18n="wAdvD">idioms that impress</p></div></div>
           </div>
         </div>
 
         <div class="world-v world-b">
           <div class="w-bento">
-            <div class="tile big"><img src="cover-clauses.jpg" width="832" height="832" alt="Relative Clauses" loading="lazy" <span class="tlabel" data-i18n="wClauses" />Relative Clauses</span></div>
-            <div class="tile med"><img src="cover-tenses.jpg" width="512" height="512" alt="Verb Tenses" loading="lazy" <span class="tlabel" data-i18n="wTenses" />Verb Tenses</span></div>
-            <div class="tile small"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" <span class="tlabel" data-i18n="wCond" />Conditionals</span></div>
-            <div class="tile small"><img src="cover-passive.jpg" width="832" height="832" alt="Passive Voice" loading="lazy" <span class="tlabel" data-i18n="wPassive" />Passive</span></div>
-            <div class="tile small"><img src="cover-modals.jpg" width="512" height="512" alt="Modals" loading="lazy" <span class="tlabel" data-i18n="wModals" />Modals</span></div>
+            <div class="tile big"><img src="cover-clauses.jpg" width="832" height="832" alt="Relative Clauses" loading="lazy" /><span class="tlabel" data-i18n="wClauses">Relative Clauses</span></div>
+            <div class="tile med"><img src="cover-tenses.jpg" width="512" height="512" alt="Verb Tenses" loading="lazy" /><span class="tlabel" data-i18n="wTenses">Verb Tenses</span></div>
+            <div class="tile small"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" /><span class="tlabel" data-i18n="wCond">Conditionals</span></div>
+            <div class="tile small"><img src="cover-passive.jpg" width="832" height="832" alt="Passive Voice" loading="lazy" /><span class="tlabel" data-i18n="wPassive">Passive</span></div>
+            <div class="tile small"><img src="cover-modals.jpg" width="512" height="512" alt="Modals" loading="lazy" /><span class="tlabel" data-i18n="wModals">Modals</span></div>
             <div class="tile more" data-i18n="wMore">+8 more worlds</div>
           </div>
         </div>
 
         <div class="world-v world-c">
           <div class="w-path">
-            <div class="node"><div class="nd"><img src="cover-clauses.jpg" width="832" height="832" alt="Clauses" loading="lazy" </div /><div class="nl" data-i18n="wClauses">Relative Clauses<small data-i18n="wClausesD">who · which · that</small></div></div>
+            <div class="node"><div class="nd"><img src="cover-clauses.jpg" width="832" height="832" alt="Clauses" loading="lazy" /></div><div class="nl" data-i18n="wClauses">Relative Clauses<small data-i18n="wClausesD">who · which · that</small></div></div>
             <div class="conn"></div>
-            <div class="node"><div class="nd"><img src="cover-tenses.jpg" width="512" height="512" alt="Tenses" loading="lazy" </div /><div class="nl" data-i18n="wTenses">Verb Tenses<small data-i18n="wTensesD">past · present · future</small></div></div>
+            <div class="node"><div class="nd"><img src="cover-tenses.jpg" width="512" height="512" alt="Tenses" loading="lazy" /></div><div class="nl" data-i18n="wTenses">Verb Tenses<small data-i18n="wTensesD">past · present · future</small></div></div>
             <div class="conn"></div>
-            <div class="node"><div class="nd"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" </div /><div class="nl" data-i18n="wCond">Conditionals<small data-i18n="wCondD">if · would · could</small></div></div>
+            <div class="node"><div class="nd"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" /></div><div class="nl" data-i18n="wCond">Conditionals<small data-i18n="wCondD">if · would · could</small></div></div>
             <div class="conn"></div>
-            <div class="node"><div class="nd"><img src="cover-advanced.jpg" width="512" height="512" alt="Advanced" loading="lazy" </div /><div class="nl" data-i18n="wAdv">Advanced Expressions<small data-i18n="wAdvD">idioms that impress</small></div></div>
+            <div class="node"><div class="nd"><img src="cover-advanced.jpg" width="512" height="512" alt="Advanced" loading="lazy" /></div><div class="nl" data-i18n="wAdv">Advanced Expressions<small data-i18n="wAdvD">idioms that impress</small></div></div>
             <div class="conn"></div>
             <div class="node"><div class="nd"><span>🎉</span></div><div class="nl" data-i18n="wMore">+8 more worlds<small data-i18n="wMoreSub">finish the quest, unlock them all</small></div></div>
           </div>
@@ -620,7 +636,7 @@
           <span class="eyebrow" data-i18n="eyebrowWord">Flashcards</span>
           <h2 data-i18n="wordTitle">Word Power</h2>
           <p data-i18n="wordSub">Flashcards from the real NGSL frequency list — the words English actually uses.</p>
-          <a class="btn-clay btn-ghost" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
+          <a class="btn-clay btn-ghost" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
         </div>
         <div class="split-visual">
 
@@ -681,7 +697,7 @@
           <span class="eyebrow" data-i18n="eyebrowWhy">Different</span>
           <h2 data-i18n="whyTitle">Why GramLingo</h2>
           <p data-i18n="whySub">Most grammar tools test you. GramLingo plays with you.</p>
-          <a class="btn-clay btn-ghost" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart">Start the Quest</a>
+          <a class="btn-clay btn-ghost" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
         </div>
         <div class="split-visual">
           <div class="why-list">
@@ -749,7 +765,7 @@
         <div class="cta-band">
           <h2 data-i18n="ctaTitle">Ready to master grammar?</h2>
           <p data-i18n="ctaSub">12 worlds. 92 phases. Zero tests. Start the Quest.</p>
-          <a class="btn-clay btn-lime" href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="ctaStart2">Start the Quest →</a>
+          <a class="btn-clay btn-lime" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart2">Start the Quest →</a>
         </div>
       </section>
 
@@ -764,23 +780,23 @@
         </div>
         <div class="f-links">
           <a href="privacy.html" data-i18n="fPrivacy">Privacy</a>
-          <a href="https://app.gramlingo.online" target="_blank" rel="noopener" data-i18n="fPlay">Play</a>
+          <a href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="fPlay">Play</a>
         </div>
         <div class="lang-switch" role="group" aria-label="Language">
-          <button data-lang="en">EN</button>
-          <button data-lang="zh">中文</button>
-          <button data-lang="es">ES</button>
+          <button aria-pressed="false" data-lang="en">EN</button>
+          <button aria-pressed="false" data-lang="zh">中文</button>
+          <button aria-pressed="false" data-lang="es">ES</button>
         </div>
       </div>
       <div class="f-credit" data-i18n="fCredit">Built with care by <a href="https://pulsebranding.com">Pulse Branding</a></div>
     </footer>
 
   </div>
-</div>
 
 <script>
 const L10N = {
   brand:{en:'GramLingo',zh:'GramLingo',es:'GramLingo'},
+  skipLink:{en:'Skip to content',zh:'跳到主要内容',es:'Saltar al contenido'},
   navWorlds:{en:'Worlds',zh:'语法世界',es:'Mundos'},
   navHow:{en:'How it works',zh:'怎么玩',es:'Cómo funciona'},
   navWord:{en:'Word power',zh:'词汇力量',es:'Vocabulario'},
@@ -881,6 +897,7 @@ const L10N = {
 
 
 function applyLang(lang){
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
   document.body.classList.remove('lang-en','lang-zh','lang-es');
   document.body.classList.add('lang-' + lang);
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -888,7 +905,9 @@ function applyLang(lang){
     if (L10N[k] && L10N[k][lang]) el.textContent = L10N[k][lang];
   });
   document.querySelectorAll('.lang-switch button').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
+    const isActive = b.dataset.lang === lang;
+    b.classList.toggle('active', isActive);
+    b.setAttribute('aria-pressed', isActive);
   });
 }
 
