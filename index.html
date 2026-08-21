@@ -66,6 +66,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   a,button,.option,.stat-pill,.w-card{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:3px solid var(--sunset);outline-offset:3px;border-radius:8px}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
   a{color:inherit}
@@ -112,6 +113,7 @@
   .option.selected .star{color:var(--ink)}
   .textarea-note{width:100%;margin-top:8px;border:2.5px solid var(--border-strong);border-radius:12px;background:var(--bg);padding:9px 13px;font-family:var(--font-body);font-size:13px;color:var(--ink);resize:vertical;min-height:48px}
   .textarea-note:focus{outline:none;border-color:var(--sunset);background:#fff}
+  .textarea-note:focus-visible{outline:3px solid var(--sunset);outline-offset:2px}
   .note-label{font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block}
 
   .mock-label{text-align:center;font-family:var(--font-head);font-weight:800;font-size:15px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin:34px 0 10px}
@@ -256,6 +258,7 @@
   .wp-cap{text-align:center;margin-top:26px;font-size:13.5px;color:var(--muted);max-width:480px;margin-left:auto;margin-right:auto}
   .wp-flip{display:flex;justify-content:center;margin-top:44px}
   .flip3d{width:200px;height:220px;perspective:900px;cursor:pointer}
+  .flip3d:focus-visible{outline:3px solid var(--sunset);outline-offset:3px;border-radius:18px}
   .flip3d .inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,.1,.2,1)}
   .flip3d.flipped .inner{transform:rotateY(180deg);-webkit-transform:rotateY(180deg)}
   .flip3d .face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 rgba(45,27,16,.3);background:#fff;padding:16px;text-align:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
