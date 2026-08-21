@@ -756,6 +756,12 @@ function applyLang(lang){
     if(reduced) return;
     timer = setInterval(() => { idx = (idx + 1) % slides.length; render(); }, 4200);
   }
+  // Pause on hover / touch — autoplay >5s needs a pause control (WIG).
+  const sl = document.getElementById('journeySlides');
+  if(sl){
+    sl.addEventListener('pointerenter', () => { if(timer) clearInterval(timer); });
+    sl.addEventListener('pointerleave', restart);
+  }
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.type = 'button';
