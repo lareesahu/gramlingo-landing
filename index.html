@@ -35,7 +35,7 @@
       "operatingSystem": "Web",
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
       "inLanguage": ["en", "zh-CN", "es"],
-      "description": "Grammar quest game with 12 worlds and 92 phases. Wrong answers become your personal review book — no tests, no drills."
+      "description": "Grammar quest game with 12 worlds and 92 phases. Wrong answers become your Error Log — no tests, no drills."
     },
     {
       "@type": "FAQPage",
@@ -45,14 +45,15 @@
         {"@type": "Question", "name": "Can I study in Chinese?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — switch between English, 中文 and Español anytime, even mid-lesson."}},
         {"@type": "Question", "name": "Who is GramLingo for?", "acceptedAnswer": {"@type": "Answer", "text": "Anyone aiming for IELTS, CET-4 or gaokao — or anyone who wants English that actually sticks."}},
         {"@type": "Question", "name": "Does it work on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — it runs in any browser on phone, tablet or desktop. No download, no install."}},
-        {"@type": "Question", "name": "How much time do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Short sessions work — even five minutes. Your wrong-book builds your review automatically."}}
+        {"@type": "Question", "name": "How much time do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Short sessions work — even five minutes. Your Error Log builds your review automatically."}}
       ]
     }
   ]
 }
 </script>
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="apple-touch-icon" href="gramlingo-logo.webp" />
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="GramLingo" />
 <meta property="og:title" content="GramLingo — Learn by Playing. Remember Forever." />
@@ -188,6 +189,7 @@
   .w-card:hover{transform:translateY(-5px)}
   .w-card .w-img{aspect-ratio:1/1;overflow:hidden;border-radius:15px 15px 0 0}
   .w-card .w-img img{width:100%;height:100%;object-fit:cover}
+  .w-card .w-emoji{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:64px;border-radius:15px 15px 0 0;background:linear-gradient(160deg,var(--sunset-soft),var(--lime-soft));border-bottom:3px solid var(--ink)}
   .w-card .w-body{padding:14px 16px}
   .w-card h3{font-family:var(--font-head);font-weight:800;font-size:15px}
   .w-card p{font-size:12px;color:var(--muted);margin-top:4px}
@@ -219,7 +221,7 @@
   .gm-fb-text{font-size:13.5px;line-height:1.55;color:#4a3320}
   .gm-actions{margin-top:14px;display:flex;justify-content:flex-end}
   .gm-next{background:var(--sunset);color:#fff;font-family:var(--font-body);font-weight:800;font-size:15px;padding:11px 22px;border-radius:12px;box-shadow:0 3px 0 rgba(224,106,31,.45)}
-  /* wrong-book screen (mirrors ErrorLogScreen) */
+  /* Error Log screen (mirrors ErrorLogScreen) */
   .gm-wb-head{display:flex;align-items:center;gap:12px;padding:16px 20px 6px}
   .gm-wb-head img{height:54px;width:auto}
   .gm-wb-title{font-family:var(--font-head);font-weight:800;font-size:18px}
@@ -336,7 +338,7 @@
     <div>
       <span class="eyebrow" data-i18n="eyebrowHero">The grammar game that actually sticks</span>
       <h1 data-i18n="heroHeadline">Learn by playing. Remember forever.</h1>
-      <p class="h-sub" data-i18n="heroSub">Wrong answers never punish you — they become your personal review book.</p>
+      <p class="h-sub" data-i18n="heroSub">Wrong answers never punish you — they go straight to your Error Log.</p>
       <div class="h-ctas">
         <a class="btn-clay" href="https://app.gramlingo.online" target="_blank" rel="noopener noreferrer" data-i18n="ctaStart">Start the Quest</a>
         <a class="btn-clay btn-ghost" href="#sec-how" data-i18n="ctaSee">See how it works</a>
@@ -349,7 +351,7 @@
     </div>
     <div class="h-visual">
       <div class="h-cover"><img src="cover-tenses.jpg" fetchpriority="high" width="512" height="512" alt="Verb Tenses world" loading="lazy" /></div>
-      <div class="chip-card chip-1"><span class="dot"></span><span data-i18n="chipWrongBook">Wrong answers become your review</span></div>
+      <div class="chip-card chip-1"><span class="dot"></span><span data-i18n="chipWrongBook">Mistakes go straight to your Error Log</span></div>
       <div class="chip-card chip-2"><span class="stars">★★★</span><span data-i18n="chipStars">Phase unlocked — keep going!</span></div>
     </div>
   </div>
@@ -409,7 +411,7 @@
         <div class="ss-img"><img src="celebrate-gramlin.webp" width="300" height="300" alt="Gramlin celebrating" loading="lazy" /></div>
         <div class="ss-body">
           <h3 data-i18n="step3T">Level up</h3>
-          <p data-i18n="step3D">Earn stars, unlock phases, and let your wrong-book build your review.</p>
+          <p data-i18n="step3D">Earn stars, unlock phases, and let your Error Log build your review.</p>
           <span class="ss-tag" data-i18n="step3Tag">Auto-built review from your mistakes</span>
         </div>
       </div>
@@ -428,10 +430,16 @@
     <div class="w-carousel-hint" data-i18n="carouselHint">Drag to explore →</div>
     <div class="w-carousel">
       <div class="w-card"><div class="w-img"><img src="cover-clauses.jpg" width="832" height="832" alt="Relative Clauses" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wClauses">Relative Clauses</h3><p data-i18n="wClausesD">who · which · that</p></div></div>
+      <div class="w-card"><div class="w-emoji">📍</div><div class="w-body"><h3 data-i18n="wPrep">Prepositions</h3><p data-i18n="wPrepD">in · on · at</p></div></div>
       <div class="w-card"><div class="w-img"><img src="cover-tenses.jpg" width="512" height="512" alt="Verb Tenses" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wTenses">Verb Tenses</h3><p data-i18n="wTensesD">past · present · future</p></div></div>
       <div class="w-card"><div class="w-img"><img src="cover-conditionals.jpg" width="512" height="512" alt="Conditionals" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wCond">Conditionals</h3><p data-i18n="wCondD">if · would · could</p></div></div>
       <div class="w-card"><div class="w-img"><img src="cover-passive.jpg" width="832" height="832" alt="Passive Voice" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wPassive">Passive Voice</h3><p data-i18n="wPassiveD">is done · was made</p></div></div>
+      <div class="w-card"><div class="w-emoji">💬</div><div class="w-body"><h3 data-i18n="wReported">Reported Speech</h3><p data-i18n="wReportedD">she said that…</p></div></div>
       <div class="w-card"><div class="w-img"><img src="cover-modals.jpg" width="512" height="512" alt="Modals" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wModals">Modals</h3><p data-i18n="wModalsD">can · must · might</p></div></div>
+      <div class="w-card"><div class="w-emoji">🧩</div><div class="w-body"><h3 data-i18n="wDet">Articles &amp; Determiners</h3><p data-i18n="wDetD">a · an · the</p></div></div>
+      <div class="w-card"><div class="w-emoji">🔗</div><div class="w-body"><h3 data-i18n="wConj">Conjunctions</h3><p data-i18n="wConjD">and · but · because</p></div></div>
+      <div class="w-card"><div class="w-emoji">🛠️</div><div class="w-body"><h3 data-i18n="wVerb">Verb Patterns</h3><p data-i18n="wVerbD">enjoy doing · decide to do</p></div></div>
+      <div class="w-card"><div class="w-emoji">🏗️</div><div class="w-body"><h3 data-i18n="wSent">Sentence Structure</h3><p data-i18n="wSentD">subject · verb · object</p></div></div>
       <div class="w-card"><div class="w-img"><img src="cover-advanced.jpg" width="512" height="512" alt="Advanced Expressions" loading="lazy" /></div><div class="w-body"><h3 data-i18n="wAdv">Advanced Expressions</h3><p data-i18n="wAdvD">idioms that impress</p></div></div>
     </div>
   </div>
@@ -468,12 +476,12 @@
         <div class="gm-actions"><span class="gm-next" data-i18n="gmNext">Next →</span></div>
       </div>
     </div>
-    <!-- Wrong-book replica (mirrors the app's Error Log) -->
+    <!-- Error Log replica (mirrors the app's Error Log) -->
     <div class="gm-screen">
       <div class="gm-wb-head">
         <img src="study-gramlin.webp" width="96" height="96" alt="Gramlin the mascot, studying" loading="lazy" />
         <div>
-          <div class="gm-wb-title" data-i18n="gmWbTitle">Your Wrong-Book</div>
+          <div class="gm-wb-title" data-i18n="gmWbTitle">Error Log</div>
           <div class="gm-wb-sub" data-i18n="gmWbSub">Auto-built from every mistake</div>
         </div>
       </div>
@@ -518,7 +526,7 @@
     </div>
     <div class="why-card">
       <div class="w-icon">📖</div>
-      <h3 data-i18n="why3T">The wrong-book</h3>
+      <h3 data-i18n="why3T">The Error Log</h3>
       <p data-i18n="why3D">Your personal review log, auto-built from your exact mistakes. It resurfaces items at spaced intervals — right when you're about to forget them.</p>
     </div>
   </div>
@@ -533,11 +541,11 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary data-i18n="faq1Q">Is GramLingo really free?</summary>
-      <div class="faq-a" data-i18n="faq1A">Yes — the first grammar world is completely free, no credit card, no signup wall. You can start playing in under 10 seconds. Future worlds may have a small unlock cost, but the core experience — including the wrong-book — is free forever.</div>
+      <div class="faq-a" data-i18n="faq1A">Yes — the first grammar world is completely free, no credit card, no signup wall. You can start playing in under 10 seconds. Future worlds may have a small unlock cost, but the core experience — including the Error Log — is free forever.</div>
     </details>
     <details class="faq-item">
       <summary data-i18n="faq2Q">What makes it different from Duolingo or grammar textbooks?</summary>
-      <div class="faq-a" data-i18n="faq2A">Textbooks explain rules then test you. Duolingo drills vocabulary with gamified streaks. GramLingo does neither — it turns grammar itself into a quest. Every question teaches through instant per-option feedback, and your mistakes auto-build a spaced-review wrong-book. No drills, no flashcards, no "you lost your streak" anxiety.</div>
+      <div class="faq-a" data-i18n="faq2A">Textbooks explain rules then test you. Duolingo drills vocabulary with gamified streaks. GramLingo does neither — it turns grammar itself into a quest. Every question teaches through instant per-option feedback, and your mistakes auto-build a spaced-review Error Log. No drills, no flashcards, no "you lost your streak" anxiety.</div>
     </details>
     <details class="faq-item">
       <summary data-i18n="faq3Q">Can I learn in my own language?</summary>
@@ -545,7 +553,7 @@
     </details>
     <details class="faq-item">
       <summary data-i18n="faq4Q">I'm preparing for IELTS / CET-4 / gaokao — will this help?</summary>
-      <div class="faq-a" data-i18n="faq4A">Absolutely. The 12 worlds cover the exact grammar points these exams test — relative clauses, conditionals, passive voice, modals, and more. Each world's phases get progressively harder, matching exam difficulty. Your wrong-book becomes a targeted study guide for the gaps the exam will expose.</div>
+      <div class="faq-a" data-i18n="faq4A">Absolutely. The 12 worlds cover the exact grammar points these exams test — relative clauses, conditionals, passive voice, modals, and more. Each world's phases get progressively harder, matching exam difficulty. Your Error Log becomes a targeted study guide for the gaps the exam will expose.</div>
     </details>
     <details class="faq-item">
       <summary data-i18n="faq5Q">Does it work on my phone?</summary>
@@ -553,7 +561,7 @@
     </details>
     <details class="faq-item">
       <summary data-i18n="faq6Q">How much time do I need per day?</summary>
-      <div class="faq-a" data-i18n="faq6A">Five minutes is enough. The quest saves your place automatically, and your wrong-book builds itself from the questions you miss — no extra study sessions needed. Consistency beats intensity: 10 minutes daily will outperform a 2-hour cram every time.</div>
+      <div class="faq-a" data-i18n="faq6A">Five minutes is enough. The quest saves your place automatically, and your Error Log builds itself from the questions you miss — no extra study sessions needed. Consistency beats intensity: 10 minutes daily will outperform a 2-hour cram every time.</div>
     </details>
   </div>
 </section>
@@ -605,8 +613,8 @@ const L10N = {
   journeyTitle:{en:'Your journey, one quest at a time',zh:'一场旅程，一次闯一关',es:'Tu viaje, una aventura a la vez'},
   journeySub:{en:'Four acts of adventure — straight from the app\u2019s opening story.',zh:'四幕冒险——直接来自 app 的开场故事。',es:'Cuatro actos de aventura — directos de la historia inicial de la app.'},
   heroHeadline:{en:'Learn by playing. Remember forever.',zh:'边玩边学，过目不忘。',es:'Aprende jugando. Recuerda para siempre.'},
-  heroSub:{en:'Wrong answers never punish you — they become your personal review book.',zh:'答错了也不会被惩罚——你的每一次错误，都会自动收进专属错题本。',es:'Equivocarte no te castiga — cada error entra en tu libro de repaso personal.'},
-  chipWrongBook:{en:'Wrong answers become your review',zh:'错题自动进你的复习本',es:'Tus errores se vuelven repaso'},
+  heroSub:{en:'Wrong answers never punish you — they go straight to your Error Log.',zh:'答错了也不会被惩罚——你的每一次错误，都会自动收进错误日志。',es:'Equivocarte no te castiga — cada error entra en tu Registro de Errores.'},
+  chipWrongBook:{en:'Mistakes go straight to your Error Log',zh:'错题自动进你的错误日志',es:'Tus errores van al Registro de Errores'},
   chipStars:{en:'Phase unlocked — keep going!',zh:'关卡解锁——继续闯！',es:'¡Fase desbloqueada — sigue!'},
   statWorlds:{en:'12 grammar worlds',zh:'12 个语法世界',es:'12 mundos'},
   statPhases:{en:'92 phases',zh:'92 个关卡',es:'92 fases'},
@@ -621,7 +629,7 @@ const L10N = {
   step2D:{en:'Instant feedback with clear explanations — every option teaches you why.',zh:'即时反馈 + 逐项解析，每个选项都告诉你为什么。',es:'Respuesta instantánea y explicaciones claras: cada opción te enseña el porqué.'},
   step2Tag:{en:'Every wrong answer explained',zh:'每个错题都有解析',es:'Cada error explicado'},
   step3T:{en:'Level up',zh:'升级变强',es:'Sube de nivel'},
-  step3D:{en:'Earn stars, unlock phases, and let your wrong-book build your review.',zh:'收集星星、解锁关卡，错题本自动生成你的专属复习。',es:'Gana estrellas, desbloquea fases y deja que tu libro de errores arme el repaso.'},
+  step3D:{en:'Earn stars, unlock phases, and let your Error Log build your review.',zh:'收集星星、解锁关卡，错误日志自动生成你的专属复习。',es:'Gana estrellas, desbloquea fases y deja que tu Registro de Errores arme el repaso.'},
   step3Tag:{en:'Auto-built review from your mistakes',zh:'错题自动生成复习',es:'Repaso automático de tus errores'},
   carouselHint:{en:'Drag to explore →',zh:'拖动探索 →',es:'Arrastra para explorar →'},
   eyebrowWorlds:{en:'Curriculum',zh:'课程体系',es:'Currículo'},
@@ -629,14 +637,26 @@ const L10N = {
   worldsSub:{en:'From relative clauses to advanced expressions — every module is a new adventure.',zh:'从定语从句到高级表达——每个模块都是一段新冒险。',es:'De las cláusulas relativas a las expresiones avanzadas: cada módulo es una aventura.'},
   wClauses:{en:'Relative Clauses',zh:'定语从句',es:'Cláusulas relativas'},
   wClausesD:{en:'who · which · that',zh:'who · which · that',es:'who · which · that'},
+  wPrep:{en:'Prepositions',zh:'介词',es:'Preposiciones'},
+  wPrepD:{en:'in · on · at',zh:'in · on · at',es:'in · on · at'},
   wTenses:{en:'Verb Tenses',zh:'动词时态',es:'Tiempos verbales'},
   wTensesD:{en:'past · present · future',zh:'过去 · 现在 · 将来',es:'pasado · presente · futuro'},
   wCond:{en:'Conditionals',zh:'条件句',es:'Condicionales'},
   wCondD:{en:'if · would · could',zh:'if · would · could',es:'if · would · could'},
   wPassive:{en:'Passive Voice',zh:'被动语态',es:'Voz pasiva'},
   wPassiveD:{en:'is done · was made',zh:'is done · was made',es:'is done · was made'},
-  wModals:{en:'Modals',zh:'情态动词',es:'Modales'},
+  wReported:{en:'Reported Speech',zh:'间接引语',es:'Estilo indirecto'},
+  wReportedD:{en:'she said that…',zh:'she said that…',es:'she said that…'},
+  wModals:{en:'Modals',zh:'情态动词',es:'Verbos modales'},
   wModalsD:{en:'can · must · might',zh:'can · must · might',es:'can · must · might'},
+  wDet:{en:'Articles & Determiners',zh:'冠词与限定词',es:'Artículos y determinantes'},
+  wDetD:{en:'a · an · the',zh:'a · an · the',es:'a · an · the'},
+  wConj:{en:'Conjunctions',zh:'连词',es:'Conjunciones'},
+  wConjD:{en:'and · but · because',zh:'and · but · because',es:'and · but · because'},
+  wVerb:{en:'Verb Patterns',zh:'动词搭配',es:'Patrones verbales'},
+  wVerbD:{en:'enjoy doing · decide to do',zh:'enjoy doing · decide to do',es:'enjoy doing · decide to do'},
+  wSent:{en:'Sentence Structure',zh:'句子结构',es:'Estructura de la oración'},
+  wSentD:{en:'subject · verb · object',zh:'主语 · 谓语 · 宾语',es:'sujeto · verbo · objeto'},
   wAdv:{en:'Advanced Expressions',zh:'高级表达',es:'Expresiones avanzadas'},
   wAdvD:{en:'idioms that impress',zh:'让人眼前一亮的习语',es:'modismos que impresionan'},
   eyebrowWord:{en:'How it feels',zh:'实际体验',es:'Cómo se siente'},
@@ -648,7 +668,7 @@ const L10N = {
   gmFbLabel:{en:'Your answer — B ✗',zh:'你的答案 — B ✗',es:'Tu respuesta — B ✗'},
   gmFbText:{en:'“which” is for things, not people. The woman is a person acting as the subject, so “who” is correct. Tap any option to see its own explanation.',zh:'“which” 用于指物，不指人。这位女士是“人”且作主语，所以要用 “who”。点击任意选项可查看该选项的解析。',es:'“which” es para cosas, no personas. La mujer es una persona y sujeto, así que “who” es correcto. Toca cualquier opción para ver su explicación.'},
   gmNext:{en:'Next →',zh:'下一题 →',es:'Siguiente →'},
-  gmWbTitle:{en:'Your Wrong-Book',zh:'你的错题本',es:'Tu libro de errores'},
+  gmWbTitle:{en:'Error Log',zh:'错误日志',es:'Registro de Errores'},
   gmWbSub:{en:'Auto-built from every mistake',zh:'从每个错误自动生成',es:'Creado de cada error'},
   gmYour:{en:'Your answer',zh:'你的答案',es:'Tu respuesta'},
   gmCorrect:{en:'Correct',zh:'正确答案',es:'Correcta'},
@@ -661,22 +681,22 @@ const L10N = {
   why1D:{en:'You learn by mistakes, not by being graded. No placement tests, no drills, no pressure — just play and the game figures out what you need.',zh:'靠错误学习，而不是被评分。没有分班考、没有刷题、没有压力——开玩就好，游戏会自动判断你需要什么。',es:'Aprendes de tus errores, no de notas. Sin tests, sin drills, sin presión — solo juega y el juego detecta lo que necesitas.'},
   why2T:{en:'Every mistake teaches',zh:'每个错误都在教你',es:'Cada error enseña'},
   why2D:{en:'Instant feedback with per-option explanations — every wrong choice explains why it\'s wrong, so you never make the same mistake twice.',zh:'即时反馈 + 逐项解析——每个错误选项都告诉你为什么错，让你不会再犯同样的错误。',es:'Feedback instantáneo con explicación opción por opción — cada error te dice por qué está mal, para no repetirlo.'},
-  why3T:{en:'The wrong-book',zh:'专属错题本',es:'El libro de errores'},
-  why3D:{en:'Your personal review log, auto-built from your exact mistakes. It resurfaces items at spaced intervals — right when you\'re about to forget them.',zh:'根据你的真实错误自动生成的个人复习本。会在你快遗忘时，按间隔重复出现。',es:'Tu cuaderno de repaso personal, creado con tus fallos exactos. Reaparece a intervalos — justo cuando vas a olvidar.'},
+  why3T:{en:'The Error Log',zh:'错误日志',es:'El Registro de Errores'},
+  why3D:{en:'Your personal review log, auto-built from your exact mistakes. It resurfaces items at spaced intervals — right when you\'re about to forget them.',zh:'根据你的真实错误自动生成的个人复习日志。会在你快遗忘时，按间隔重复出现。',es:'Tu registro de repaso personal, creado con tus fallos exactos. Reaparece a intervalos — justo cuando vas a olvidar.'},
   eyebrowFaq:{en:'FAQ',zh:'常见问题',es:'FAQ'},
   faqTitle:{en:'Questions, answered',zh:'常见问题',es:'Preguntas frecuentes'},
   faq1Q:{en:'Is GramLingo really free?',zh:'GramLingo 真的免费吗？',es:'¿GramLingo es realmente gratis?'},
-  faq1A:{en:'Yes — the first grammar world is completely free, no credit card, no signup wall. You can start playing in under 10 seconds. Future worlds may have a small unlock cost, but the core experience — including the wrong-book — is free forever.',zh:'是的——第一个语法世界完全免费，无需信用卡，无需注册。10 秒内就能开始玩。后续世界可能有少量解锁费用，但核心体验——包括错题本——永久免费。',es:'Sí — el primer mundo es completamente gratis, sin tarjeta, sin registro. Empiezas en 10 segundos. Mundos futuros pueden tener un pequeño costo, pero la experiencia central — incluyendo el libro de errores — es gratis para siempre.'},
+  faq1A:{en:'Yes — the first grammar world is completely free, no credit card, no signup wall. You can start playing in under 10 seconds. Future worlds may have a small unlock cost, but the core experience — including the Error Log — is free forever.',zh:'是的——第一个语法世界完全免费，无需信用卡，无需注册。10 秒内就能开始玩。后续世界可能有少量解锁费用，但核心体验——包括错误日志——永久免费。',es:'Sí — el primer mundo es completamente gratis, sin tarjeta, sin registro. Empiezas en 10 segundos. Mundos futuros pueden tener un pequeño costo, pero la experiencia central — incluyendo el Registro de Errores — es gratis para siempre.'},
   faq2Q:{en:'What makes it different from Duolingo or grammar textbooks?',zh:'跟 Duolingo 或语法书有什么不同？',es:'¿Qué lo diferencia de Duolingo o los libros de gramática?'},
-  faq2A:{en:'Textbooks explain rules then test you. Duolingo drills vocabulary with gamified streaks. GramLingo does neither — it turns grammar itself into a quest. Every question teaches through instant per-option feedback, and your mistakes auto-build a spaced-review wrong-book. No drills, no flashcards, no "you lost your streak" anxiety.',zh:'语法书先讲规则再考你。Duolingo 用游戏化连胜刷词汇。GramLingo 都不做——它把语法本身变成闯关。每道题通过逐项即时反馈来教学，错题自动生成间隔复习本。没有刷题、没有闪卡、没有"连胜断了"的焦虑。',es:'Los libros explican reglas y luego te examinan. Duolingo taladra vocabulario con rachas. GramLingo no hace ninguna de las dos cosas — convierte la gramática en una aventura. Cada pregunta enseña con feedback instantáneo, y tus errores crean un libro de repaso espaciado. Sin drills, sin flashcards, sin ansiedad de rachas.'},
+  faq2A:{en:'Textbooks explain rules then test you. Duolingo drills vocabulary with gamified streaks. GramLingo does neither — it turns grammar itself into a quest. Every question teaches through instant per-option feedback, and your mistakes auto-build a spaced-review Error Log. No drills, no flashcards, no "you lost your streak" anxiety.',zh:'语法书先讲规则再考你。Duolingo 用游戏化连胜刷词汇。GramLingo 都不做——它把语法本身变成闯关。每道题通过逐项即时反馈来教学，错误自动生成间隔复习日志。没有刷题、没有闪卡、没有"连胜断了"的焦虑。',es:'Los libros explican reglas y luego te examinan. Duolingo taladra vocabulario con rachas. GramLingo no hace ninguna de las dos cosas — convierte la gramática en una aventura. Cada pregunta enseña con feedback instantáneo, y tus errores crean un Registro de Errores espaciado. Sin drills, sin flashcards, sin ansiedad de rachas.'},
   faq3Q:{en:'Can I learn in my own language?',zh:'可以用我自己的语言学习吗？',es:'¿Puedo aprender en mi propio idioma?'},
   faq3A:{en:'Yes — switch between English, 中文 and Español anytime, even mid-lesson. Explanations adapt to your language instantly. Perfect for learners who think in Chinese or Spanish but want to master English grammar.',zh:'可以——随时在 English / 中文 / Español 之间切换，课中也能切。解析会即时切换语言。适合用中文或西班牙语思考但想精通英语语法的学习者。',es:'Sí — cambia entre inglés, 中文 y español cuando quieras, incluso a mitad de lección. Las explicaciones se adaptan al instante. Perfecto para quienes piensan en chino o español pero quieren dominar la gramática inglesa.'},
   faq4Q:{en:'I\'m preparing for IELTS / CET-4 / gaokao — will this help?',zh:'我在准备雅思 / CET-4 / 高考——这个有用吗？',es:'¿Me sirve para IELTS / CET-4 / gaokao?'},
-  faq4A:{en:'Absolutely. The 12 worlds cover the exact grammar points these exams test — relative clauses, conditionals, passive voice, modals, and more. Each world\'s phases get progressively harder, matching exam difficulty. Your wrong-book becomes a targeted study guide for the gaps the exam will expose.',zh:'当然有用。12 个世界覆盖了这些考试的核心语法点——定语从句、条件句、被动语态、情态动词等。每个世界的关卡逐渐加难，匹配考试难度。错题本会成为针对你薄弱点的专属学习指南。',es:'Claramente. Los 12 mundos cubren los puntos exactos que estos exámenes prueban — cláusulas relativas, condicionales, voz pasiva, modales y más. Cada mundo se complica progresivamente. Tu libro de errores se convierte en una guía de estudio enfocada en lo que el examen revelará.'},
+  faq4A:{en:'Absolutely. The 12 worlds cover the exact grammar points these exams test — relative clauses, conditionals, passive voice, modals, and more. Each world\'s phases get progressively harder, matching exam difficulty. Your Error Log becomes a targeted study guide for the gaps the exam will expose.',zh:'当然有用。12 个世界覆盖了这些考试的核心语法点——定语从句、条件句、被动语态、情态动词等。每个世界的关卡逐渐加难，匹配考试难度。错误日志会成为针对你薄弱点的专属学习指南。',es:'Claramente. Los 12 mundos cubren los puntos exactos que estos exámenes prueban — cláusulas relativas, condicionales, voz pasiva, modales y más. Cada mundo se complica progresivamente. Tu Registro de Errores se convierte en una guía de estudio enfocada en lo que el examen revelará.'},
   faq5Q:{en:'Does it work on my phone?',zh:'手机能玩吗？',es:'¿Funciona en el móvil?'},
   faq5A:{en:'Yes — it runs in any modern browser on phone, tablet, or desktop. No download, no install, no app store. Your progress syncs across devices automatically, so you can start on your phone and finish on your laptop.',zh:'可以——手机、平板、电脑，任何现代浏览器都能玩。不用下载安装，不用应用商店。进度自动跨设备同步，手机上开始，电脑上继续。',es:'Sí — funciona en cualquier navegador moderno, en móvil, tablet o escritorio. Sin descargas, sin tiendas. Tu progreso se sincroniza entre dispositivos automáticamente.'},
   faq6Q:{en:'How much time do I need per day?',zh:'每天需要多少时间？',es:'¿Cuánto tiempo necesito al día?'},
-  faq6A:{en:'Five minutes is enough. The quest saves your place automatically, and your wrong-book builds itself from the questions you miss — no extra study sessions needed. Consistency beats intensity: 10 minutes daily will outperform a 2-hour cram every time.',zh:'五分钟就够。闯关自动存档，错题本从你做错的题里自动生成——不需要额外复习。坚持比强度更重要：每天 10 分钟比每次 2 小时突击效果好得多。',es:'Cinco minutos bastan. La aventura guarda tu progreso y tu libro de errores se construye solo — sin sesiones extra. La consistencia vence a la intensidad: 10 minutos diarios superan a 2 horas de repaso intensivo.'},
+  faq6A:{en:'Five minutes is enough. The quest saves your place automatically, and your Error Log builds itself from the questions you miss — no extra study sessions needed. Consistency beats intensity: 10 minutes daily will outperform a 2-hour cram every time.',zh:'五分钟就够。闯关自动存档，错误日志从你做错的题里自动生成——不需要额外复习。坚持比强度更重要：每天 10 分钟比每次 2 小时突击效果好得多。',es:'Cinco minutos bastan. La aventura guarda tu progreso y tu Registro de Errores se construye solo — sin sesiones extra. La consistencia vence a la intensidad: 10 minutos diarios superan a 2 horas de repaso intensivo.'},
   ctaTitle:{en:'Ready to master grammar?',zh:'准备好征服语法了吗？',es:'¿Listo para dominar la gramática?'},
   ctaSub:{en:'12 worlds. 92 phases. Zero tests. Start the Quest.',zh:'12 个世界，92 个关卡，无分班测试。开始闯关吧。',es:'12 mundos, 92 fases, sin exámenes de nivel. Empieza la aventura.'},
   tagline:{en:'Grammar Quest — Learn by playing',zh:'语法闯关 — 边玩边学',es:'Aventura gramatical — aprende jugando'},
