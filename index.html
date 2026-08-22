@@ -7,9 +7,11 @@
 <meta name="description" content="The grammar game that actually sticks. 12 grammar worlds, 92 phases — no tests, no drills, just play. EN · 中文 · Español" />
 <meta name="theme-color" content="#ff8c42" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/baloo2-latin.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/dmsans-latin.woff2" />
-<link rel="canonical" href="https://gramlingo.online/" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/baloo2-latin.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/dmsans-latin.woff2" />
+  <link rel="preload" as="image" type="image/webp" href="cover-tenses.webp" fetchpriority="high" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="canonical" href="https://gramlingo.online/" />
 <link rel="alternate" hreflang="en" href="https://gramlingo.online/" />
 <link rel="alternate" hreflang="zh-CN" href="https://gramlingo.online/?lang=zh" />
 <link rel="alternate" hreflang="es" href="https://gramlingo.online/?lang=es" />
@@ -288,8 +290,14 @@
   /* ── Motion ── */
   .hero{animation:heroIn .7s cubic-bezier(.22,.61,.36,1) both}
   @keyframes heroIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)}
-  .reveal.in{opacity:1;transform:none}
+  /* Reveals: hidden only when JS is loaded (graceful no-JS fallback) */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  /* Print / headless render: always show full content (animations would otherwise snapshot mid-fade) */
+  @media print{
+    .hero,.js .reveal{animation:none !important;opacity:1 !important;transform:none !important;transition:none !important}
+  }
+  @media (max-width:640px){.js .reveal{transform:translateY(14px)}}
   .btn-clay,.btn-ghost,.btn-lime{transition:transform .18s cubic-bezier(.22,.61,.36,1),box-shadow .18s ease,background .18s ease}
   .btn-clay:hover{transform:translateY(-2px)}
   .btn-clay:active{transform:translateY(1px)}
@@ -300,8 +308,6 @@
   .slide-arrow{transition:transform .15s ease,background .15s ease}
   .slide-arrow:hover{transform:translateY(-50%) scale(1.08)}
   .m-links a{transition:background .15s ease,color .15s ease}
-  @media (max-width:640px){.reveal{transform:translateY(14px)}}
-
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important;animation:none!important}
   }
@@ -721,16 +727,21 @@ function applyLang(lang){
   });
 }
 
-/* ── scroll reveal (reduced-motion safe) ── */
+/* ── scroll reveal (reduced-motion safe + safety timeout) ── */
 (function(){
-  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const els = document.querySelectorAll('#sec-how, #sec-journey, #sec-worlds, #sec-word, #sec-why, #sec-faq, #sec-cta');
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(el => el.classList.add('reveal','in'));
+    return;
+  }
   els.forEach(el => el.classList.add('reveal'));
   if(!('IntersectionObserver' in window)){ els.forEach(el => el.classList.add('in')); return; }
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
   els.forEach(el => io.observe(el));
+  // Safety: ensure nothing stays hidden if IO misbehaves
+  setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>e.classList.add('in')), 2500);
 })();
 
 /* ── journey slideshow ── */
