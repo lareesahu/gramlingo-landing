@@ -1,0 +1,58 @@
+# GramLingo — full markdown copy
+
+> Source: https://gramlingo.online/
+> Summary: GramLingo is a browser-based grammar learning game with 12 grammar worlds and 92 phases, where every wrong answer is explained and logged instead of graded.
+
+## What it is
+GramLingo is a grammar learning game that runs in any modern browser. It teaches English grammar as a quest: 12 grammar worlds covering relative clauses, tenses, conditionals, passive voice, reported speech, modals and more, across 92 phases. There are no placement tests and no scores — every wrong answer is explained option by option and filed automatically in an Error Log that resurfaces at spaced intervals. The interface switches between English, 中文 and Español at any point in a lesson. The first grammar world is free, with no credit card and no signup wall.
+
+## How it works
+- Pick a world: choose one of 12 grammar worlds — clauses, tenses, conditionals and more — with no placement test needed.
+- Play and learn: instant feedback with a clear explanation on every option, so each wrong answer teaches why it is wrong.
+- Level up: earn stars, unlock phases, and let the Error Log build a review queue from your own mistakes.
+
+## Curriculum — the 12 grammar worlds
+- Relative Clauses (who · which · that), Prepositions (in · on · at), Verb Tenses (past · present · future)
+- Conditionals (if · would · could), Passive Voice (is done · was made), Reported Speech (she said that…)
+- Modals (can · must · might), Articles & Determiners (a · an · the), Conjunctions (and · but · because)
+- Verb Patterns (enjoy doing · decide to do), Sentence Structure (subject · verb · object), Advanced Expressions (idioms that impress)
+
+## What makes it different
+- No tests — the game is the test; learners progress by playing rather than by being graded.
+- Every mistake teaches: per-option explanations instead of a single correct answer.
+- The Error Log turns a learner's own mistakes into a spaced-review study guide.
+
+## Citable facts
+- What it is: A grammar learning game that runs in a web browser — no download, no app store
+- Curriculum: 12 grammar worlds and 92 phases, from relative clauses to advanced expressions
+- Method: No placement tests: the game is the test, and every wrong answer is explained and logged
+- Error Log: Mistakes auto-build a personal review log, grouped by phase and resurfaced at spaced intervals
+- Languages: English, 中文 and Español, switchable at any point, including mid-lesson
+- Price: The first grammar world is free with no credit card and no signup wall; future worlds may have a small unlock cost
+- Exam relevance: The 12 worlds cover the grammar points tested in IELTS, CET-4 and gaokao
+- Devices: Phone, tablet or desktop browser; progress syncs across devices
+- Built by: Pulse Branding
+
+## FAQ
+### Is GramLingo free?
+Yes — the first grammar world is completely free, with no credit card and no signup wall, and you can start playing in under 10 seconds. Future worlds may have a small unlock cost.
+
+### What makes GramLingo different from Duolingo or grammar textbooks?
+Textbooks explain rules and then test you; Duolingo drills vocabulary with gamified streaks. GramLingo does neither — it turns grammar itself into a quest, explaining every option and filing every mistake in an Error Log.
+
+### Can I learn in my own language?
+Yes — you can switch between English, 中文 and Español at any time, even mid-lesson, and explanations adapt instantly.
+
+### Does GramLingo help with IELTS, CET-4 or gaokao?
+The 12 worlds cover the grammar points those exams test, including relative clauses, conditionals, passive voice and modals, with phases that get progressively harder. The Error Log becomes a targeted study guide for the gaps an exam will expose.
+
+### Does it work on my phone?
+Yes — it runs in any modern browser on phone, tablet or desktop with no download or install, and progress syncs across devices.
+
+### How much time do I need per day?
+Five minutes is enough. The quest saves your place automatically and the Error Log builds itself from the questions you miss.
+
+## Links
+- GramLingo home — https://gramlingo.online/ — The marketing page for the grammar game
+- Play GramLingo — https://app.gramlingo.online/ — The web app itself — start the quest in the browser
+- Privacy policy — https://gramlingo.online/privacy.html — How learner data is handled
